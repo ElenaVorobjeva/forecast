@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Примерное время окончания расчетов - Доп. информация</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/one-workspace.css">
+    <link rel="stylesheet" href="../css/extra-info.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header__close" onclick = "
+            document.querySelector('.header__open').style.display = 'block';
+        ">
+            <div class="burger-button-wrapper">
+                <div class="burger-button"></div>
+            </div>
+        </div>
+        <header class="clearfix header__open">
+            <div class="logo clearfix">
+                <img src="img/logo-hmc.png" alt="logo">
+                <span>Гидрометцентр России</span>
+            </div>
+            <div class="burger-button-wrapper"
+                onclick = "document.querySelector('nav').style.display = 'block';
+                        document.querySelector('body').style.overflow = 'hidden';"
+            >
+                <div class="burger-button"></div>
+            </div>
+            <nav>
+                <div>
+                    <div class="nav-header">
+                        <div class="close" 
+                            onclick = "document.querySelector('nav').style.display = 'none';
+                                    document.querySelector('body').style.overflow = 'scroll';
+                                    document.querySelector('nav').classList.remove('submenu-open');"
+                        ></div>
+                    </div>
+                    <div class="nav-top">
+                        <ul class="menu content">
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__instraction" name="header" checked>
+                                <label for="nav__instraction" class="title accordeon__header">Инструкция по пользованию сайтом</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="instruction.html" class="article-link">Инструкция</a></li>
+                                    <li class="accordeon__item"><a href="clearing-the-cache.html" class="article-link">Очистка кэш-памяти браузера</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__description" name="header">
+                                <label for="nav__description" class="title accordeon__header">Описание прогностической продукции системы COSMO-Ru</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="parameters-for-risk-assessment.html" class="article-link">Параметры для оценки рисков опасных явлений, связанных с развитием конвекции</a></li>
+                                    <li class="accordeon__item"><a href="areas-of-the-cosmoru-model-account.html" class="article-link">Области счета модели COSMO-Ru</a></li>
+                                    <li class="accordeon__item"><a href="time-of-the-end-of-calculations.html" class="article-link">Примерное время окончания расчетов</a></li>
+                                </ul>
+                            </li>
+                            <li class="not-sub"><a href="useful-links.html" class="article-link">Полезные ссылки</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="nav-bottom">
+                        <ul class="menu">  
+                            <li class="user-menu">
+                                <div class="burger-button-wrapper" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                ">
+                                    <div class="burger-button"></div>
+                                </div>
+                                <div class="close" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                "></div>
+                                <div class="user-menu-item" onClick = "document.querySelector('nav').classList.toggle('submenu-open');"><h1 class="not-header">Доп. информация</h1>
+                                    <ul class="submenu">
+                                        <li><a href="../index.html">ЦФО</a></li>
+                                        <li><a href="">ПФО</a></li>
+                                        <li><a href="">СЗФО</a></li>
+                                        <li><a href="">СФО</a></li>
+                                        <li><a href="">ЮФО и СКФО</a></li>
+                                        <li><a href="">УФО</a></li>
+                                        <li><a href="">ДФО</a></li>
+                                        <li><a href="">Беларусь</a></li>
+                                        <li><a href="">Москва</a></li>
+                                        <li><a href="">Наукастинг</a></li>
+                                        <li><a href="">Администрирование</a></li>
+                                        <li class="active"><a href="extra-info/instruction.html">Доп. информация</a></li>
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform" target="_blank">Оставить отзыв</a></li>
+                                        <li><a href="../authentication.html">Выйти</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h2>Примерное время окончания расчетов</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Начальный срок (UTC)</td>
+                        <td>Примерное время окончания расчетов (UTC)</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>00:00</td>
+                        <td>04:30</td>
+                    </tr>
+                    <tr>
+                        <td>06:00</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr>
+                        <td>12:00</td>
+                        <td>16:30</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>22:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>   
+    </div>
+    <script src="js/extra-info.js"></script>
+</body>
+</html>

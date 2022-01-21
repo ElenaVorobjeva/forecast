@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font: normal 14px Arial, serif;
+}
+
+.slider-wrapper * {
+    box-sizing: border-box;
+}
+
+.slider-wrapper,
+.day-container {
+    display: flex;
+}
+
+.slider-wrapper {
+    margin: 0 4px;
+}
+
+.slider-wrapper .start, 
+.slider-wrapper .end {
+    margin-top: 20px;
+    width: 35px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;    
+}
+
+.slider-wrapper .start {
+    margin-right: 10px;
+}
+
+.slider-wrapper .end {
+    margin-left: 10px;
+}
+
+.day-container {
+    position: relative;
+    z-index: -2;
+    /* width: calc(100vw - 100px); */
+    width: calc(100vw - 748px);
+    margin-top: -10px;
+}
+
+.day-container .day {
+    padding: 15px 5px 5px 5px;
+    background-color: rgba(206, 205, 205, 0.5);
+    border-left: 1px solid #555;
+    color: #555;
+    font-style: italic;
+}
+
+.day-container .day:last-child {
+    border-right: 1px solid #555;
+}
+
+.prev, 
+.next {
+    display: none;
+    margin-top: 10px;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    background: rgba(206, 205, 205, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.prev {
+    margin-right: 10px;
+}
+
+.next {
+    margin-left: 10px;
+}
+
+.slider-label {
+    position: relative;
+    transform-origin: center center;
+    display: block;
+    width: 40px;
+    background: rgba(206, 205, 205, 0.5);
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 5px;
+    margin-left: -10px;
+    color: #555;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+       
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Скрывает слайдер, чтобы можно было создать свой */
+    width: 100%; /* Указание параметра ширины требуется для Firefox. */
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+  
+input[type=range]:focus {
+    outline: none; /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */
+}
+  
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    background: transparent; /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Специальные правила для браузеров на движках WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #555;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle closest-side, #555 4px, white 5px, white 10px);
+    cursor: pointer;
+    margin-top: -5px; /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
+}
+   
+/* Тоже самое для Firefox */
+input[type=range]::-moz-range-thumb {
+    border: 1px solid #555;
+    height: 20px;
+    width:20px;
+    border-radius: 50%;
+    background: radial-gradient(circle closest-side, #555 4px, white 5px, white 10px);
+    cursor: pointer;
+}
+   
+/* Тоже самое для IE */
+input[type=range]::-ms-thumb {
+    border: 1px solid #555;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle closest-side, #555 4px, white 5px, white 10px);
+    cursor: pointer;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+  
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+  
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+  
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #fff;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #fff;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+   
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff;
+}
+   
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+   
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: transparent;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #fff;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #fff;
+}
+
+@media (max-width: 849px) {
+    .prev, 
+    .next {
+        display: block;
+    }
+
+    .slider-wrapper .start, 
+    .slider-wrapper .end {
+        margin-top: 30px; 
+    }
+
+    .slider-label {
+      width: 40px;
+      border-radius: 5px;
+      font-size: 13px;
+      line-height: 17px;
+      margin-bottom: 15px;
+      margin-left: -10px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        font-size: .8em;
+    }
+
+    .slider-wrapper .start, 
+    .slider-wrapper .end {
+        font-size: 1.1em;
+        font-weight: bold; 
+    }
+}

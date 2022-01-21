@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/authentication.css">
+</head>
+<body>
+    <div class="authentication">
+        <header class="auth_header">
+            <div class="logo clearfix">
+                <img src="img/logo-hmc.png" alt="Logotype">
+                <span>Гидрометцентр России</span>
+            </div>
+            <div class="title">
+                Сайт продукции COSMO-Ru
+            </div>
+        </header>
+        <main>
+            <!-- <form action="index.html" method="post" name="authForm" onsubmit="return validateForm('auth');"> -->
+            <form id="authForm" name="authForm">
+                <h1>Вход в систему</h1>
+                <div class="email input-container">
+                    <input type="text" name="emailInput" placeholder="Электронная почта (admin@yandex.ru)">
+                </div>
+                <div class="password input-container">
+                    <input class="password-input" type="password" name="passwordInput" placeholder="Пароль (adminadmin)">
+                    <a href="#" class="password-control" onclick="return showHidePassword(this);"></a>
+                </div>
+                <div class="a-container">
+                    <a href="reset-password.html">Забыли пароль?</a>
+                    <a href="registration.html">Зарегистрироваться</a>
+                </div>
+                <div class="response negative"></div>
+                <button type="submit">Войти</button>
+            </form>
+        </main>
+    </div>
+    <script src="js/show-hide-password.js"></script>
+    <script src="js/validate-form.js"></script>
+</body>
+</html>

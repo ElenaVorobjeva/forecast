@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Очистка кэш-памяти браузера - Доп. информация</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/one-workspace.css">
+    <link rel="stylesheet" href="../css/extra-info.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header__close" onclick = "
+            document.querySelector('.header__open').style.display = 'block';
+        ">
+            <div class="burger-button-wrapper">
+                <div class="burger-button"></div>
+            </div>
+        </div>
+        <header class="clearfix header__open">
+            <div class="logo clearfix">
+                <img src="img/logo-hmc.png" alt="logo">
+                <span>Гидрометцентр России</span>
+            </div>
+            <div class="burger-button-wrapper"
+                onclick = "document.querySelector('nav').style.display = 'block';
+                        document.querySelector('body').style.overflow = 'hidden';"
+            >
+                <div class="burger-button"></div>
+            </div>
+            <nav>
+                <div>
+                    <div class="nav-header">
+                        <div class="close" 
+                            onclick = "document.querySelector('nav').style.display = 'none';
+                                    document.querySelector('body').style.overflow = 'scroll';
+                                    document.querySelector('nav').classList.remove('submenu-open');"
+                        ></div>
+                    </div>
+                    <div class="nav-top">
+                        <ul class="menu content">
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__instraction" name="header" checked>
+                                <label for="nav__instraction" class="title accordeon__header">Инструкция по пользованию сайтом</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="instruction.html" class="article-link">Инструкция</a></li>
+                                    <li class="accordeon__item"><a href="clearing-the-cache.html" class="article-link">Очистка кэш-памяти браузера</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__description" name="header">
+                                <label for="nav__description" class="title accordeon__header">Описание прогностической продукции системы COSMO-Ru</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="parameters-for-risk-assessment.html" class="article-link">Параметры для оценки рисков опасных явлений, связанных с развитием конвекции</a></li>
+                                    <li class="accordeon__item"><a href="areas-of-the-cosmoru-model-account.html" class="article-link">Области счета модели COSMO-Ru</a></li>
+                                    <li class="accordeon__item"><a href="time-of-the-end-of-calculations.html" class="article-link">Примерное время окончания расчетов</a></li>
+                                </ul>
+                            </li>
+                            <li class="not-sub"><a href="useful-links.html" class="article-link">Полезные ссылки</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="nav-bottom">
+                        <ul class="menu">  
+                            <li class="user-menu">
+                                <div class="burger-button-wrapper" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                ">
+                                    <div class="burger-button"></div>
+                                </div>
+                                <div class="close" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                "></div>
+                                <div class="user-menu-item" onClick = "document.querySelector('nav').classList.toggle('submenu-open');"><h1 class="not-header">Доп. информация</h1>
+                                    <ul class="submenu">
+                                        <li><a href="../index.html">ЦФО</a></li>
+                                        <li><a href="">ПФО</a></li>
+                                        <li><a href="">СЗФО</a></li>
+                                        <li><a href="">СФО</a></li>
+                                        <li><a href="">ЮФО и СКФО</a></li>
+                                        <li><a href="">УФО</a></li>
+                                        <li><a href="">ДФО</a></li>
+                                        <li><a href="">Беларусь</a></li>
+                                        <li><a href="">Москва</a></li>
+                                        <li><a href="">Наукастинг</a></li>
+                                        <li><a href="">Администрирование</a></li>
+                                        <li class="active"><a href="extra-info/instruction.html">Доп. информация</a></li>
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform" target="_blank">Оставить отзыв</a></li>
+                                        <li><a href="../authentication.html">Выйти</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h2 id="cash_header">Очистка кэш-памяти браузера</h2>
+            <p>Очиска кэш-памяти браузера необходима, если представленные данные устарели, или сайт выглядит неправильно.</p>
+            <h3 id="chrome">Браузер Google Chrome:</h3>
+            <ol>
+                <li>Откройте инструменты разработчика:  нажмите клавишу <i>F12</i> или сочетание клавиш <i>Ctrl+Shift+I</i>.</li>
+                <li>Теперь, оставив панель открытой, кликните левой кнопкой мыши на кнопку «Обновить» (рядом со строкой адреса). Откроется выпадающее меню.</li>
+                <li>В меню необходимо выбрать пункт "Очистка кэша и жесткая перезагрузка" и дождаться полной перезагрузки сайта.</li>
+            </ol>
+            <figure>
+                <img src="img/cashChrome.png" alt="">
+            </figure>
+            <h3 id="firefox">Браузер Mozilla Firefox:</h3>
+            <p>Необходимо воспользоваться функцией "Забыть об этом сайте". Для этого достаточно открыть историю браузера (<i>Ctrl+H</i>), кликнуть правой кнопкой на выбранном сайте и выбрать в выпадающем меню "забыть об этом сайте". Затем перезагрузить сайт.</p>
+            <figure>
+                <img src="img/cashFirefox.png" alt="">
+            </figure>
+            <h3 id="opera">Браузер Opera:</h3>
+            <p>Раскройте меню и выберите пункт «Удалить личные данные» в разделе «Настройки». В появившемся окне кликните по надписи «Детальная настройка» и поставьте флажок в поле «Очистить кэш». Для запуска процесса нажмите кнопку «Удалить».</p>
+            <h3 id="yandex">Браузер Yandex:</h3>
+            <p>Нажать <i>Ctrl+Shift+Del</i> на клавиатуре. Снять все флажки, кроме «Файлы, сохранённые в кэше» (установить его, если не установлен).Нажать кнопку «Очистить».</p>
+            <h3 id="safari">Браузер Safari:</h3>
+            <p>Сначала либо воспользуйтесь горячими клавишами <i>Ctrl+Alt+E</i>, либо выберите пункт «Очистить кэш-память» в разделе «Правка» меню браузера. Затем нажмите кнопку «Очистить» в появившемся диалоге подтверждения операции.</p>
+            <h3 id="explorer">Браузер Internet Explorer:</h3>
+            <p>Раскройте в меню раздел «Сервис» и выберите строку «Свойства обозревателя». Затем в окне настроек браузера перейдите на вкладку «Общие» в секции «История просмотра» и щелкните по кнопке «Удалить». Разные типы хранящихся данных удаляются отдельно - для этого окно «Удаление истории просмотра» разделено на секции, в каждую из которых помещена кнопка удаления информации определенного типа. Нужный вам раздел назван «Временные файлы Интернета» - нажмите кнопку «Удалить файлы», помещенную в него.</p>
+        </main>   
+    </div>
+    <script src="js/extra-info.js"></script>
+</body>
+</html>

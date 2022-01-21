@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Области счета конфигураций системы COSMO-Ru - Доп. информация</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/one-workspace.css">
+    <link rel="stylesheet" href="../css/extra-info.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header__close" onclick = "
+            document.querySelector('.header__open').style.display = 'block';
+        ">
+            <div class="burger-button-wrapper">
+                <div class="burger-button"></div>
+            </div>
+        </div>
+        <header class="clearfix header__open">
+            <div class="logo clearfix">
+                <img src="img/logo-hmc.png" alt="logo">
+                <span>Гидрометцентр России</span>
+            </div>
+            <div class="burger-button-wrapper"
+                onclick = "document.querySelector('nav').style.display = 'block';
+                        document.querySelector('body').style.overflow = 'hidden';"
+            >
+                <div class="burger-button"></div>
+            </div>
+            <nav>
+                <div>
+                    <div class="nav-header">
+                        <div class="close" 
+                            onclick = "document.querySelector('nav').style.display = 'none';
+                                    document.querySelector('body').style.overflow = 'scroll';
+                                    document.querySelector('nav').classList.remove('submenu-open');"
+                        ></div>
+                    </div>
+                    <div class="nav-top">
+                        <ul class="menu content">
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__instraction" name="header" checked>
+                                <label for="nav__instraction" class="title accordeon__header">Инструкция по пользованию сайтом</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="instruction.html" class="article-link">Инструкция</a></li>
+                                    <li class="accordeon__item"><a href="clearing-the-cache.html" class="article-link">Очистка кэш-памяти браузера</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordeon__wrapper">
+                                <input type="checkbox" id="nav__description" name="header">
+                                <label for="nav__description" class="title accordeon__header">Описание прогностической продукции системы COSMO-Ru</label>
+                                <ul class="sub accordeon__body">
+                                    <li class="accordeon__item"><a href="parameters-for-risk-assessment.html" class="article-link">Параметры для оценки рисков опасных явлений, связанных с развитием конвекции</a></li>
+                                    <li class="accordeon__item"><a href="areas-of-the-cosmoru-model-account.html" class="article-link">Области счета модели COSMO-Ru</a></li>
+                                    <li class="accordeon__item"><a href="time-of-the-end-of-calculations.html" class="article-link">Примерное время окончания расчетов</a></li>
+                                </ul>
+                            </li>
+                            <li class="not-sub"><a href="useful-links.html" class="article-link">Полезные ссылки</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="nav-bottom">
+                        <ul class="menu">  
+                            <li class="user-menu">
+                                <div class="burger-button-wrapper" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                ">
+                                    <div class="burger-button"></div>
+                                </div>
+                                <div class="close" onclick = "
+                                    document.querySelector('.header__open').style.display = 'none';
+                                "></div>
+                                <div class="user-menu-item" onClick = "document.querySelector('nav').classList.toggle('submenu-open');"><h1 class="not-header">Доп. информация</h1>
+                                    <ul class="submenu">
+                                        <li><a href="../index.html">ЦФО</a></li>
+                                        <li><a href="">ПФО</a></li>
+                                        <li><a href="">СЗФО</a></li>
+                                        <li><a href="">СФО</a></li>
+                                        <li><a href="">ЮФО и СКФО</a></li>
+                                        <li><a href="">УФО</a></li>
+                                        <li><a href="">ДФО</a></li>
+                                        <li><a href="">Беларусь</a></li>
+                                        <li><a href="">Москва</a></li>
+                                        <li><a href="">Наукастинг</a></li>
+                                        <li><a href="">Администрирование</a></li>
+                                        <li class="active"><a href="extra-info/instruction.html">Доп. информация</a></li>
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform" target="_blank">Оставить отзыв</a></li>
+                                        <li><a href="../authentication.html">Выйти</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <h2>Области счета конфигураций системы COSMO-Ru</h2>
+            <h3>Суперкомпьютер SGI ICE-X</h3>
+            <figure>
+                <img src="img/area_1.png" alt="">
+            </figure>
+            <table>
+                <thead>
+                    <tr>
+                        <td rowspan="2">Модель</td>
+                        <td rowspan="2">Количество узлов</td>
+                        <td colspan="2">Шаг сетки</td>
+                        <td rowspan="2">Примечание</td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 1.4em;">&deg;</span></td>
+                        <td>км</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COSMO-Ru13 ENA</td><td>1000x500x40</td><td>0.12</td><td>&asymp;13.2</td><td>Розовый контур</td>
+                    </tr>
+                    <tr>
+                        <td>COSMO-Ru7 ETR</td><td>700x620x40</td><td>0.0625</td><td>7</td><td>Синий контур</td>
+                    </tr>
+                    <tr>
+                        <td>COSMO-Ru2 CFO</td><td>420x470x50</td><td>0.02</td><td>2.2</td><td>Зеленый контур</td>
+                    </tr>
+                    <tr>
+                        <td>COSMO-Ru2 SFO</td><td>420x470x50</td><td>0.02</td><td>2.2</td><td>Зеленый контур</td>
+                    </tr>
+                    <tr>
+                        <td>COSMO-Ru2 VFO</td><td>470x450x50</td><td>0.02</td><td>2.2</td><td>Зеленый контур</td>
+                    </tr>
+                    <tr>
+                        <td>COSMO-Ru1 Sochi</td><td>190x190x50</td><td>0.01</td><td>1.1</td><td>Красный контур</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <h3>Суперкомпьютер CRAY XC40</h3>
+            <figure>
+                <img src="img/area_3.png" alt="">
+            </figure>
+            <table>
+                <thead>
+                    <tr>
+                        <td rowspan="2">Модель</td>
+                        <td rowspan="2">Количество узлов</td>
+                        <td colspan="2">Шаг сетки</td>
+                        <td rowspan="2">Примечание</td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-size: 1.4em;">&deg;</span></td>
+                        <td>км</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cm06ena</td><td>1000x500x40</td><td>0.06</td><td>6.6</td><td>Синий контур</td>
+                    </tr>
+                    <tr>
+                        <td>cm02krs</td><td>396x326x50</td><td>0.02</td><td>2.2</td><td>Зеленый контур</td>
+                    </tr>
+                    <tr>
+                        <td>cm01krs</td><td>300x300x50</td><td>0.01</td><td>1.1</td><td>Красный контур</td>
+                    </tr>
+                    <tr>
+                        <td>cm02etr</td><td>1200x1400x50</td><td>0.02</td><td>2.2</td><td>Зелёный контур</td>
+                    </tr>
+                    <tr>
+                        <td>cm01msk</td><td>180x180x50</td><td>0.009</td><td>1</td><td>Красный контур</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>   
+    </div>
+    <script src="js/extra-info.js"></script>
+</body>
+</html>

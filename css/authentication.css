@@ -1,0 +1,259 @@
+/* body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+@media (max-width: 450px) {
+    body {
+        display: block;
+        background-color: var(--color-background-gray);
+    }
+}
+
+@media (max-width: 350px) {
+    body {
+        font-size: .75rem;
+    }
+}
+/* end body */
+
+/* content-wrapper */
+.authentication {
+    width: 400px;
+    background-color: var(--color-background-gray);
+}
+
+@media (max-width: 450px) {
+    .authentication {
+        max-width: 450px;
+        width: 100%;
+        height: 100%;
+    }
+}
+/* end content-wrapper */
+
+.auth_header {
+    padding: 30px;
+    border-bottom: var(--border-gray-color);
+}
+
+/* logo */
+.logo {
+    display: flex;
+    float: none;
+    justify-content: center;
+    margin: 0 0 25px 0;
+}
+
+.logo img {
+    float: none;
+    margin-right: 25px;
+}
+
+.logo span {
+    float: none;
+    font-size: .875rem;
+}
+
+@media (max-width: 300px) {
+    .logo span {
+        display: none;
+    }
+}
+/* end logo */
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+main {
+    padding: 60px 30px;
+}
+
+main h1 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+main p {
+    text-align: center;
+    font-style: italic;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    font-size: .875rem;
+}
+
+main input,
+main select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    border: var(--border-gray-color);
+    margin-bottom: 20px;
+    outline: none;
+    cursor: text;
+}
+
+main select option:first-child {
+    display: none;
+}
+
+main input.correct,
+main select.correct {
+    border: 1px solid var(--color-green-correct);
+}
+
+main input.error,
+main select.error {
+    border: 1px solid var(--color-red-error);
+}
+
+.input-container {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 40px;
+}
+
+.password-control {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    z-index: 3;
+    display: inline-block;
+    width: 23px;
+    height: 30px;
+    margin: 0;
+    background: url('../img/view-icon.svg') 0 0 no-repeat;
+}
+.password-control.view {
+    background: url('../img/no-view-icon.svg') 0 0 no-repeat;
+}
+
+main .a-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: .75rem;
+    text-decoration: underline;
+}
+
+main a:last-child {
+    margin-bottom: 0;
+}
+
+main button {
+    display: block;
+    margin: 35px auto 0 auto;
+    width: auto;
+    padding: 7px 20px;
+    border: var(--border-text-color);
+    background-color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.response {
+    display: none;
+    margin: 0;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a.center {
+    text-align: center;
+}
+
+.response a {
+    font-size: 1rem;
+}
+
+.positive, .positive a {
+    color: var(--color-green-correct);
+    font-size: 1rem;
+}
+
+.negative, .negative a {
+    color: var(--color-red-error);
+}
+
+.response.positive {
+    border-color: var(--color-green-correct);
+    background: var(--color-green-correct-20per);
+}
+
+.response.negative {
+    border-color: var(--color-red-error);
+    background: var(--color-red-error-20per);
+}
+
+div + .response {
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+.hint {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    z-index: 4;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-red-error);
+    color: var(--color-red-error);
+    background-color: var(--color-white);
+    line-height: 21px;
+    text-align: center;
+}
+
+[data-hint]::after {
+    content: attr(data-hint);
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    opacity: 0;
+    pointer-events: none;
+    width: 150px;
+    border-radius: 0;
+    border: none;
+    color: var(--color-text);
+    font-size: .875rem;
+    padding: 10px;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 5px 2px var(--color-gray);
+}
+
+[data-hint]:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 849px) {
+    [data-hint]::after {
+        top: -50px;
+        left: auto;
+        right: -35px;
+    }
+}

@@ -1,0 +1,286 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+/* wrapper */
+.wrapper {
+    width: 1210px;
+}
+
+@media (min-width: 851px) and (max-width: 1250px) {
+    .wrapper {
+        width: 100vw;
+    }
+}
+/* end wrapper */
+
+/* header */
+header {
+    flex: 0 1 310px;
+}
+
+.header__close {
+    flex: 0 1 50px;
+}
+
+@media (min-width: 1251px) {
+    .header__close {
+        display: none;
+    }
+
+    .header__open {
+        display: block;
+        position: static;
+    }
+}
+/* end header */
+
+/* article list */
+.content li a {
+    display: block;
+}
+
+ul.content > li {
+    padding: 0;
+}
+
+.content li label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sub {
+    list-style: none;
+}
+
+.sub li {
+    display: block;
+    padding: 10px 40px;
+}
+
+.content > li.not-sub {
+    display: block;
+    padding: 10px 40px;
+}
+
+.user-menu-item {
+    padding: 10px 40px;
+}
+
+@media (max-width: 849px) {
+    .accordeon__wrapper {
+        background-color: transparent;
+    }
+
+    .user-menu-item {
+        padding: 0;
+    }
+}
+/* end article list */
+
+/* user menu */
+@media (min-width: 1251px) {
+    .menu .burger-button-wrapper {
+        display: none;
+    }
+
+    .user-menu > div:last-of-type {
+        border-left: none;
+        padding: 10px 40px;
+    }
+}
+/* end user menu */
+
+/* main */
+main {
+    flex: 1 0 790px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 20px;
+    font-size: 1.0625rem;
+    margin-right: 0;
+}
+
+@media (max-width: 850px) {
+    main {
+        box-sizing: border-box;
+        overflow-y: initial;
+    }
+}
+
+/* end main */
+
+/* paragraph */
+main p {
+    margin-bottom: 1em;
+}
+
+/* heading */
+main h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+}
+
+main h3 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+/* end heading */
+
+/* links block */
+main a {
+    text-decoration: underline;
+}
+
+.links_block {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+}
+
+.links_block a {
+    display: block;
+}
+/* end links block */
+
+/* list */
+main ol,
+main ul {
+    margin: 1em 0;
+    padding-left: 40px;
+}
+
+/* image block */
+figure {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+figure img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+figure figcaption {
+    font-style: italic;
+    text-align: center;
+    font-size: .85em;
+    margin-top: .5em;
+}
+
+figure.grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px 30px;
+    justify-items: center;
+    align-items: end;
+}
+
+figure.grid figcaption,
+figure.grid figure.center {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+figure.max {
+    max-width: 100%;
+}
+
+@media (max-width: 850px) {
+    figure {
+        max-width: 100%;
+    }
+
+    figure.grid {
+        display: block;
+    }
+}
+/* end image block */
+
+/* formula block */
+.formula {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.param_value {
+    display: block;
+    margin: 10px 50px 0 50px;
+}
+
+.param_value p {
+    margin: 5px 0;
+}
+
+@media (max-width: 850px) {
+    .formula {
+        max-width: 100%;
+    }
+}
+/* end formula block */
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+table caption {
+    margin-bottom: 1em;
+}
+
+table thead tr {
+    font-weight: bold;
+    border-top: var(--border-gray-color);
+    text-align: center;
+}
+
+table td{
+    padding: .7em .95em;
+}
+
+table tr td {
+    border-right: var(--border-gray-color);
+}
+
+table tr td:first-child {
+    border-left: var(--border-gray-color);
+    white-space: nowrap;
+}
+
+table tbody tr {
+    border-bottom: var(--border-gray-color);
+}
+
+table tbody tr:first-child {
+    border-top: var(--border-gray-color);
+}
+
+table tbody tr td:last-child {
+    text-align: left;
+    vertical-align: middle;
+}
+
+table img {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 560px) {
+    table img {
+        min-width: 40%;
+        max-width: 100%;
+    }
+}
+/* end table */

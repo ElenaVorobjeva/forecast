@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Две рабочие области</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/two-workspace.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="header__close">
+            <div class="burger-button-wrapper" onclick = "
+                document.querySelector('header').style.display = 'block';
+            ">
+                <div class="burger-button"></div>
+            </div>
+        </nav>
+        <header class="clearfix header__open">
+            <div class="logo clearfix">
+                <img src="img/logo-hmc.png" alt="logo">
+                <span>Гидрометцентр России</span>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li class="active"><a href="#">ЦФО</a></li>
+                    <li><a href="#">ПФО</a></li>
+                    <li><a href="#">СЗФО</a></li>
+                    <li><a href="#">СФО</a></li>
+                    <li><a href="#">ЮФО и СКФО</a></li>
+                    <li><a href="#">УФО</a></li>
+                    <li><a href="#">ДФО</a></li>
+                    <li><a href="#">Беларусь</a></li>
+                    <li><a href="#">Москва</a></li>
+                    <li><a href="#">Наукастинг</a></li>
+                    <li><a href="#">Администрирование</a></li>
+                    <li><a href="extra-info/instruction.html">Доп. информация</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform" target="_blank">Оставить отзыв</a></li>
+                    <li><a href="authentication.html">Выйти</a></li>
+                </ul>
+                <a class="add-hide-workspace" href="index.html">Удалить рабочую область</a>
+                <div class="close" onclick = "
+                    document.querySelector('.header__open').style.display = 'none';
+                "></div>
+            </nav>
+        </header>
+        <div class="component left">
+            <div class="component_nav">
+                <ul>
+                    <li class="active"><a href="#">Карты прогнозов</a></li>
+                    <li><a href="#">Метеограммы</a></li>
+                    <li><a href="#">Аэрологические диаграммы</a></li>
+                </ul>
+            </div>
+            <div class="component_map-container">
+                <img src="img/map_0.png" alt="Карта" onclick = "
+                    fullScreenFunction();
+                    document.querySelector('.full-screen').style.display = 'flex';
+                ">
+            </div>
+            <div>
+                <div class="slider-wrapper">
+                    <div id="previous-button" class="prev-button square-button">&lt;</div>
+                    <div>
+                        <div class="start"></div>
+                        <div class="prev"></div>
+                    </div>
+                    <div>
+                        <div class="slider-label"></div>
+                        <input id="sliderInput" type="range" name="slider">
+                        <div class="day-container"></div>
+                    </div>
+                    <div>
+                        <div class="end"></div>
+                        <div class="next"></div>
+                    </div>
+                    <div id="next-button" class="next-button square-button">&gt;</div>
+                    <div id="play-pause-button" class="play-pause-button square-button">&#9658;</div>
+                </div>
+                <div class="params">
+                    <div class="params-group">
+                        <label for="domen-group" class="title">Домен:</label>
+                        <select class="params-group-list domen-list">
+                            <option value="0" selected>Земной шар</option>
+                            <option value="1">Россия</option>
+                            <option value="2">ЕТР</option>
+                            <option value="3">Европа</option>
+                            <option value="4">ЦФО</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="model-group" class="title">Модель:</label>
+                        <select class="params-group-list model-list">
+                            <option for="model-input-0">COSMO-Ru6ENA</option>
+                            <option for="model-input-1">COSMO-Ru13.2ENA</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="elem-group" class="title">Метеоэлементы:</label>
+                        <select class="params-group-list elem-list">
+                            <option for="elem-input-0">H500</option>
+                            <option for="elem-input-0">Давление на у.м.</option>
+                            <option for="elem-input-0">Осадки за 12 часов</option>
+                            <option for="elem-input-0">Осадки за 24 часа</option>
+                            <option for="elem-input-0">Осадки за 120 часов</option>
+                            <option for="elem-input-0">Порывы ветра</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="term-group" class="title">Начальный срок (UTC):</label>
+                        <select class="params-group-list term-list">
+                            <option for="term-input-0">00</option>
+                            <option for="term-input-1">06</option>
+                            <option for="term-input-2">12</option>
+                            <option for="term-input-3">18</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="date-group" class="title">Дата прогноза:</label>
+                        <div class="params-group-list date-list">
+                            <input type="date" value="2021-09-13">
+                        </div>
+                    </div>
+                    <div class="params-group">
+                        <label for="speed-group" class="title">Скорость воспроизведения:</label>
+                        <select class="params-group-list speed-list">
+                            <option for="speed-input-0">0.75x</option>
+                            <option for="speed-input-1">1x</option>
+                            <option for="speed-input-2">1.25x</option>
+                            <option for="speed-input-3">1.5x</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="component right">
+            <div class="component_nav">
+                <ul>
+                    <li class="active"><a href="#">Карты прогнозов</a></li>
+                    <li><a href="#">Метеограммы</a></li>
+                    <li><a href="#">Аэрологические диаграммы</a></li>
+                </ul>
+            </div>
+            <div class="component_map-container">
+                <img src="img/map_0.png" alt="Карта" onclick = "
+                    fullScreenFunction();
+                    document.querySelector('.full-screen').style.display = 'flex';
+                ">
+            </div>
+            <div>
+                <div class="slider-wrapper">
+                    <div class="prev-button square-button">&lt;</div>
+                    <div>
+                        <div class="start"></div>
+                        <div class="prev"></div>
+                    </div>
+                    <div>
+                        <div class="slider-label"></div>
+                        <input id="sliderInput" type="range" name="slider">
+                        <div class="day-container"></div>
+                    </div>
+                    <div>
+                        <div class="end"></div>
+                        <div class="next"></div>
+                    </div>
+                    <div class="next-button square-button">&gt;</div>
+                    <div class="play-pause-button square-button">&#9658;</div>
+                </div>
+                <div class="params">
+                    <div class="params-group">
+                        <label for="domen-group" class="title">Домен:</label>
+                        <select class="params-group-list domen-list">
+                            <option value="0" selected>Земной шар</option>
+                            <option value="1">Россия</option>
+                            <option value="2">ЕТР</option>
+                            <option value="3">Европа</option>
+                            <option value="4">ЦФО</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="model-group" class="title">Модель:</label>
+                        <select class="params-group-list model-list">
+                            <option for="model-input-0">COSMO-Ru6ENA</option>
+                            <option for="model-input-1">COSMO-Ru13.2ENA</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="elem-group" class="title">Метеоэлементы:</label>
+                        <select class="params-group-list elem-list">
+                            <option for="elem-input-0">H500</option>
+                            <option for="elem-input-0">Давление на у.м.</option>
+                            <option for="elem-input-0">Осадки за 12 часов</option>
+                            <option for="elem-input-0">Осадки за 24 часа</option>
+                            <option for="elem-input-0">Осадки за 120 часов</option>
+                            <option for="elem-input-0">Порывы ветра</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="term-group" class="title">Начальный срок (UTC):</label>
+                        <select class="params-group-list term-list">
+                            <option for="term-input-0">00</option>
+                            <option for="term-input-1">06</option>
+                            <option for="term-input-2">12</option>
+                            <option for="term-input-3">18</option>
+                        </select>
+                    </div>
+                    <div class="params-group">
+                        <label for="date-group" class="title">Дата прогноза:</label>
+                        <input class="date-list" type="date" value="2021-09-13">
+                    </div>
+                    <div class="params-group">
+                        <label for="speed-group" class="title">Скорость воспроизведения:</label>
+                        <select class="params-group-list speed-list">
+                            <option for="speed-input-0">0.75x</option>
+                            <option for="speed-input-1">1x</option>
+                            <option for="speed-input-2">1.25x</option>
+                            <option for="speed-input-3">1.5x</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-screen">
+        <div class="full-screen__container">
+            <img src="img/map_0.png" alt="Карта">
+        </div>
+        <div class="full-screen__nav">
+            <div id="zoom-down-button"><div class="minus"></div></div>
+            <div id="zoom-up-button"><div class="plus"></div></div>
+            <div id="full-screen-button"><div class="open-full-screen"></div></div>
+            <div id="previous-button"><div class="arrow left"></div></div>
+            <div id="play-pause-button"><div class="triangle"></div></div>
+            <div id="next-button"><div class="arrow right"></div></div>
+            <div id="close-button"><div class="close"></div></div>
+        </div>
+    </div>
+    <div class="error">
+        <div>
+            <p>Версия с двумя рабочими областями не поддерживается на данном устройстве</p>
+            <button>Перейти к версии с одной рабочей областью</button>
+        </div>
+    </div>
+    <script src="js/slider.js"></script>
+    <script src="js/full-screen.js"></script>
+</body>
+</html>
