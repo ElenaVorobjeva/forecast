@@ -7,14 +7,14 @@ function validateForm(e, form) {
     let isValid = true;
     let inputContainers = document.querySelectorAll(".input-container");
 
-    for(let container of inputContainers) {
+    for (let container of inputContainers) {
         let [isValidInput, error] = getCheckMethod(container)(container.querySelector("input"));
 
-        if(!isValidInput) {
+        if (!isValidInput) {
             createErrorHint(
-                container, 
-                container.querySelector("input"), 
-                container.querySelector(".hint"), 
+                container,
+                container.querySelector("input"),
+                container.querySelector(".hint"),
                 error
             );
             isValid = false;
@@ -27,11 +27,11 @@ function validateForm(e, form) {
         }
     }
 
-    if(isValid) makeQuery(form);
+    if (isValid) makeQuery(form);
 }
 
 function createErrorHint(container, input, hint, error) {
-    if(hint) hint.remove();
+    if (hint) hint.remove();
     input.classList.add('error');
     let elem = document.createElement('div');
     elem.className = "hint";
@@ -44,40 +44,40 @@ function createErrorHint(container, input, hint, error) {
 function removeErrorHint(input, hint) {
     input.classList.remove('error');
     input.classList.add('correct');
-    if(hint) hint.remove();
+    if (hint) hint.remove();
 }
 
 function getCheckMethod(container) {
     let className = container.classList[0];
-    if(className == "email") return checkEmail
-    else if(className == "password") return checkPassword
-    else if(className == "name" || className == "work" || className == "profession") return checkNotEmpty;
+    if (className == "email") return checkEmail
+    else if (className == "password") return checkPassword
+    else if (className == "name" || className == "work" || className == "profession") return checkNotEmpty;
 }
 
 function checkEmail(input) {
     let reg = /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i;
 
-    if(input.value === "") {
+    if (input.value === "") {
         return [false, 'Обязательное поле'];
     }
-    else if(!reg.test(input.value)) {
+    else if (!reg.test(input.value)) {
         return [false, 'Введите адрес электронной почты'];
     }
     return [true, ""];
 }
 
 function checkPassword(input) {
-    if (input.value == "") { 
+    if (input.value == "") {
         return [false, 'Обязательное поле'];
     }
-    else if(input.value.length < 8) {
+    else if (input.value.length < 8) {
         return [false, 'Пароль не может быть короче 8 символов'];
     }
     return [true, ""];
 }
 
 function checkNotEmpty(input) {
-    if(input.value == "") {
+    if (input.value == "") {
         return [false, 'Обязательное поле'];
     }
     return [true, ""];
@@ -89,34 +89,35 @@ function makeQuery(form) {
         body: new FormData(form)
     }).then(
         successResponse => {
-            if(successResponse.ok) successResponse.json().then(
+            if (successResponse.ok) successResponse.json().then(
                 result => {
-                    if(result.isOk) {
+                    if (result.isOk) {
                         document.querySelector("html").innerHTML = result.content;
                         document.title = result.title;
-                        if(document.forms[0]) document.forms[0].onsubmit = (event) => validateForm(event, document.forms[0]);
+                        if (document.forms[0]) document.forms[0].onsubmit = (event) => validateForm(event, document.forms[0]);
+                        setListener();
                     }
                     else {
                         showErrorMessage(
-                            form, 
-                            document.querySelector(".response"), 
+                            form,
+                            document.querySelector(".response"),
                             result.error
                         );
-                    }                    
+                    }
                 }
             );
             else {
                 showErrorMessage(
-                    form, 
-                    document.querySelector(".response"), 
+                    form,
+                    document.querySelector(".response"),
                     "К сожалению, прозошла ошибка. Попробуйте позднее."
                 );
             }
         },
         () => {
             showErrorMessage(
-                form, 
-                document.querySelector(".response"), 
+                form,
+                document.querySelector(".response"),
                 "К сожалению, прозошла ошибка. Попробуйте позднее."
             );
         }
@@ -124,11 +125,11 @@ function makeQuery(form) {
 }
 
 function getUrl(form) {
-    if(form.name == "authForm") return "php/authentication.php"
-    else if(form.name == "regForm") return "php/registration.php"
-    else if(form.name == "userInfoForm") return "php/registration-2.php"
-    else if(form.name == "resetForm") return "php/reset-password.php"
-    else if(form.name == "setForm") return "php/set-password.php";
+    if (form.name == "authForm") return "php/authentication.php"
+    else if (form.name == "regForm") return "php/registration.php"
+    else if (form.name == "userInfoForm") return "php/registration-2.php"
+    else if (form.name == "resetForm") return "php/reset-password.php"
+    else if (form.name == "setForm") return "php/set-password.php";
 }
 
 function showErrorMessage(form, errorBlock, error) {
