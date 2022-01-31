@@ -32,7 +32,7 @@ function getUserData($id) {
 		"login" => "admin@yandex.ru",
 		"password" => "adminadmin",
 		"availableDistrictsId" => [0, 1, 2, 3, 4, 5, 6, 7],
-		"priorityDistrictId" => 3,
+		"priorityDistrictId" => 2,
 		"role" => "admin",
 		"isNewUser" => false
 	];

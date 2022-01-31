@@ -80,8 +80,16 @@ ul.menu li:hover {
     background-color: var(--color-gray-30per);
 }
 
-ul.menu li.active {
+ul.menu li.active,
+ul.submenu li.active button {
     font-weight: bold;
+}
+
+ul.submenu button {
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: .875rem;
+    cursor: pointer;
 }
 
 @media (min-width: 850px) {    

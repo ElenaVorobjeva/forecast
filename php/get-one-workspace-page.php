@@ -21,23 +21,28 @@
 */
 
 include "one-workspace-pattern.php";
-
-$sections = ["ЦФО", "ПФО", "СЗФО", "СФО", "ЮФО и СКФО", "УФО", "ДФО", "Беларусь", "Наукастинг", "Мониторинг", "Администрирование"];
+$sections = ["0" => "ЦФО", "1" => "ПФО", "2" => "СЗФО", "3" => "СФО", "4" => "ЮФО и СКФО", "5" => "УФО",
+             "6" => "ДФО", "7" => "Беларусь", "8" => "Наукастинг", "9" => "Мониторинг", "10" => "Администрирование"];
 
 function getOneWorkspacePage($user) {
- 
-    
+    $sections = ["0" => "ЦФО", "1" => "ПФО", "2" => "СЗФО", "3" => "СФО", "4" => "ЮФО и СКФО", "5" => "УФО",
+             "6" => "ДФО", "7" => "Беларусь", "8" => "Наукастинг", "9" => "Мониторинг", "10" => "Администрирование"];
 
-    return getOneWorkspacePattern(getSectionsList($user));
+    $activeSectionId = $user["priorityDistrictId"]; //$_GET["section"]
+    $activeSection = $sections[$activeSectionId];
+    $sectionsList =  getSectionsList($sections, $user, $activeSectionId);
+    $miniMapScr = "img/mini-map-".$activeSectionId.".png";
+    $activeTypeId = 0;
+    // $typeList = getTypeList();
+    return getOneWorkspacePattern($sectionsList, $activeSection, $miniMapScr);
 }
 
-function getSectionsList($user) {
-    $availableSections = getAvailableSectionsId($sections, $user[$availableDistrictsId], $user[$priorityDistrictId], $user[$role]));
-
+function getSectionsList($sections, $user, $activeSectionId) {
+    $availableSections = getAvailableSectionsId($sections, $user["availableDistrictsId"], $user["priorityDistrictId"], $user["role"]);
     $sectionsList = "";
     for($i = 0; $i < count($availableSections); $i++) {
-        $active = ($i == 0) ? "class='active' " : ""; //а какой раздел должен быть выбран???
-        $sectionsList = $sectionsList."<li ".$active."><a href='#'>".$availableSections[$i]."</a></li>";
+        $active = ($availableSections[$i] == $activeSectionId) ? "class='active' " : "";
+        $sectionsList = $sectionsList."<li ".$active."><button value='".$availableSections[$i]."'>".$sections[$availableSections[$i]]."</button></li>";
     }
     return $sectionsList;
 }
@@ -52,13 +57,6 @@ function getAvailableSectionsId($sections, $available, $priority, $role) {
     array_unshift($available, $priority);
     if($role == "moderator" || $role == "admin") array_push($available, 9);
     if($role == "admin") array_push($available, 10);
-    return getAvailableSections($sections, $available);
-}
-
-function getAvailableSections($sections, $available) {
-    for($i = 0; $i < count($available); $i++) {
-        $available[$i] = $sections[$available[$i]];
-    }
     return $available;
 }
 ?>
