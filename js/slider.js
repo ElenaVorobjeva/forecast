@@ -1,17 +1,10 @@
-let start = 0;
-let end = 120;
-let step = 3;
-let date = getDateObj('2021100100');
-
-sliderHandler(start, end, step, date);
-
 function sliderHandler(start, end, step, date) {
     let slider = document.querySelector("#sliderInput");
     let sliderLabel = document.querySelector(".slider-label");
 
-    slider.setAttribute("min", start); 
-    slider.setAttribute("max", end); 
-    slider.setAttribute("step", step); 
+    slider.setAttribute("min", start);
+    slider.setAttribute("max", end);
+    slider.setAttribute("step", step);
     slider.setAttribute("value", start);
 
     document.querySelector(".start").innerHTML = start;
@@ -28,10 +21,10 @@ function sliderHandler(start, end, step, date) {
     startDate.setHours(startDate.getHours() + start);
 
     let hoursInDay = 0;
-    for(let i = 1; i <= end - start; i++) {
-        if(startDate.getHours() !== 0) hoursInDay++;
+    for (let i = 1; i <= end - start; i++) {
+        if (startDate.getHours() !== 0) hoursInDay++;
         else {
-            if(i !== 1) {
+            if (i !== 1) {
                 startDate.setDate(startDate.getDate() - 1);
                 createBlock(startDate, hoursInDay);
                 hoursInDay = 1;
@@ -39,7 +32,7 @@ function sliderHandler(start, end, step, date) {
             }
             else hoursInDay++;
         }
-        if(i === end - start) {
+        if (i === end - start) {
             createBlock(startDate, hoursInDay);
             hoursInDay = 1;
         }
@@ -56,22 +49,22 @@ function sliderHandler(start, end, step, date) {
 
     slider.addEventListener("input", showSliderValue, false);
 
-    document.querySelector("#previous-button").addEventListener('click', function() {
-        if(slider.value >= start && slider.value <= end) {
+    document.querySelector("#previous-button").addEventListener('click', function () {
+        if (slider.value >= start && slider.value <= end) {
             slider.value = +slider.value - step;
             showSliderValue();
         }
     });
 
-    document.querySelector("#next-button").addEventListener('click', function() {
-        if(slider.value >= start && slider.value <= end) {
+    document.querySelector("#next-button").addEventListener('click', function () {
+        if (slider.value >= start && slider.value <= end) {
             slider.value = +slider.value + step;
             showSliderValue();
         }
     });
 
-    document.querySelector('.component_map-container img').addEventListener("wheel", function(e) {
-        if(slider.value >= start && slider.value <= end) {
+    document.querySelector('.component_map-container img').addEventListener("wheel", function (e) {
+        if (slider.value >= start && slider.value <= end) {
             if (e.deltaY < 0) {
                 slider.value = +slider.value - step;
             }
@@ -93,11 +86,11 @@ function sliderHandler(start, end, step, date) {
     }
 }
 
-function getDateObj(date) { 
+function getDateObj(date) {
     return new Date(
-        +date.slice(0, 4), 
-        +date.slice(4, 6) - 1,
-        +date.slice(6, 8),
-        +date.slice(8)
+        +date.slice(0, 4),
+        +date.slice(6, 7) - 1,
+        +date.slice(8, 10),
+        +date.slice(11)
     );
 }

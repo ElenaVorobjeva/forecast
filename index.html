@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/one-workspace.css">
 </head>
+
 <body>
     <div class="wrapper">
-        <div class="header__close" onclick = "
+        <div class="header__close" onclick="
             document.querySelector('.header__open').style.display = 'block';
         ">
             <div class="burger-button-wrapper">
@@ -22,20 +24,16 @@
                 <img src="img/logo-hmc.png" alt="logo">
                 <span>Гидрометцентр России</span>
             </div>
-            <div class="burger-button-wrapper"
-                onclick = "document.querySelector('nav').style.display = 'block';
-                        document.querySelector('body').style.overflow = 'hidden';"
-            >
+            <div class="burger-button-wrapper" onclick="document.querySelector('nav').style.display = 'block';
+                        document.querySelector('body').style.overflow = 'hidden';">
                 <div class="burger-button"></div>
             </div>
             <nav>
                 <div>
                     <div class="nav-header">
-                        <div class="close" 
-                            onclick = "document.querySelector('nav').style.display = 'none';
+                        <div class="close" onclick="document.querySelector('nav').style.display = 'none';
                                     document.querySelector('body').style.overflow = 'scroll';
-                                    document.querySelector('nav').classList.remove('submenu-open');"
-                        ></div>
+                                    document.querySelector('nav').classList.remove('submenu-open');"></div>
                     </div>
                     <div class="nav-top">
                         <ul class="menu">
@@ -52,17 +50,18 @@
                         <img src="img/mini-map-cfo.jpg" alt="Карта ЦФО">
                     </div>
                     <div class="nav-bottom">
-                        <ul class="menu">  
+                        <ul class="menu">
                             <li class="user-menu">
-                                <div class="burger-button-wrapper" onclick = "
+                                <div class="burger-button-wrapper" onclick="
                                     document.querySelector('.header__open').style.display = 'none';
                                 ">
                                     <div class="burger-button"></div>
                                 </div>
-                                <div class="close" onclick = "
+                                <div class="close" onclick="
                                     document.querySelector('.header__open').style.display = 'none';
                                 "></div>
-                                <div class="user-menu-item" onClick = "document.querySelector('nav').classList.toggle('submenu-open');">
+                                <div class="user-menu-item"
+                                    onClick="document.querySelector('nav').classList.toggle('submenu-open');">
                                     <h1 class="not-header">ЦФО</h1>
                                     <ul class="submenu">
                                         <li class="active"><a href="#">ЦФО</a></li>
@@ -77,10 +76,11 @@
                                         <li><a href="#">Наукастинг</a></li>
                                         <li><a href="#">Администрирование</a></li>
                                         <li><a href="extra-info/instruction.html">Доп. информация</a></li>
-                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform" target="_blank">Оставить отзыв</a></li>
+                                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf6DfYoNiEdB022UzWBNrNbaQ97IbzQaROFSCA7_ANJ3ThjVQ/viewform"
+                                                target="_blank">Оставить отзыв</a></li>
                                         <li><a href="authentication.html">Выйти</a></li>
                                     </ul>
-                                </div>  
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="prev"></div>
                 </div>
                 <div class="component_map-container">
-                    <img src="img/map_0.png" alt="Карта" onclick = "
+                    <img src="img/map_0.png" alt="Карта" onclick="
                         fullScreenFunction();
                         document.querySelector('.full-screen').style.display = 'flex';
                     ">
@@ -114,7 +114,8 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-wrapper">
+            sliderHandler(start, end, step, date);
+            <div class="slider-wrapper" data-start="0" data-end="120" data-step="3" data-date="2022-02-09">
                 <div>
                     <div class="start"></div>
                     <div class="prev"></div>
@@ -130,7 +131,7 @@
                 </div>
             </div>
         </main>
-        <div class="params__close" onclick = "
+        <div class="params__close" onclick="
             document.querySelector('.params__open').style.display = 'block';
         ">
             <div>Параметры</div>
@@ -139,7 +140,7 @@
             <div class="params">
                 <div class="params_header">
                     <h2>Параметры</h2>
-                    <div class="close" onclick = "
+                    <div class="close" onclick="
                         document.querySelector('.params__open').style.display = 'none';
                     "></div>
                 </div>
@@ -230,16 +231,31 @@
             <img src="img/map_0.png" alt="Карта">
         </div>
         <div class="full-screen__nav">
-            <div id="zoom-down-button"><div class="minus"></div></div>
-            <div id="zoom-up-button"><div class="plus"></div></div>
-            <div id="full-screen-button"><div class="open-full-screen"></div></div>
-            <div id="previous-button"><div class="arrow left"></div></div>
-            <div id="play-pause-button"><div class="triangle"></div></div>
-            <div id="next-button"><div class="arrow right"></div></div>
-            <div id="close-button"><div class="close"></div></div>
+            <div id="zoom-down-button">
+                <div class="minus"></div>
+            </div>
+            <div id="zoom-up-button">
+                <div class="plus"></div>
+            </div>
+            <div id="full-screen-button">
+                <div class="open-full-screen"></div>
+            </div>
+            <div id="previous-button">
+                <div class="arrow left"></div>
+            </div>
+            <div id="play-pause-button">
+                <div class="triangle"></div>
+            </div>
+            <div id="next-button">
+                <div class="arrow right"></div>
+            </div>
+            <div id="close-button">
+                <div class="close"></div>
+            </div>
         </div>
     </div>
     <script src="js/slider.js"></script>
     <script src="js/full-screen.js"></script>
 </body>
+
 </html>

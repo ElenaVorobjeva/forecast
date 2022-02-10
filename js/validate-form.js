@@ -93,7 +93,7 @@ function makeQuery(form) {
                 result => {
                     if (result.isOk) {
                         document.querySelector("html").innerHTML = result.content;
-                        document.title = result.title;
+                        if (result.title) document.title = result.title;
                         if (document.forms[0]) document.forms[0].onsubmit = (event) => validateForm(event, document.forms[0]);
                         setListener();
                     }

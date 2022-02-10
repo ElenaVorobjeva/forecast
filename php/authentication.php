@@ -36,8 +36,7 @@ if($login != null) {
         //Вход успешный
         $response = array(
             "isOk" => true,
-            "content" => getOneWorkspacePage($user),
-             "title" => "Одна рабочая область"
+            "content" => getOneWorkspacePage($user)
         );
     }
     else {
