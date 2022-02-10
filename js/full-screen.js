@@ -1,4 +1,4 @@
-function fullScreenFunction(zoomDownButton, zoomUpButton, fullScreenButton, playPauseButton, closeButton, img) {
+function fullScreenFunction(zoomDownButton, zoomUpButton, fullScreenButton, playPauseButton, closeButton, imggit) {
     let width = 100;
     zoomFunction(img, width, width);
 
