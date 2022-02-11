@@ -2,7 +2,7 @@
 function getOneWorkspacePattern(
 	$sectionsList, $activeSection, $miniMap, $typesList, 
 	$domensList, $modelsList, $elementslist, $termsList,
-	$currentDate, $times
+	$currentDate, $times, $link
 ){
 	return "
 		<head>
@@ -75,7 +75,7 @@ function getOneWorkspacePattern(
 							<div class='prev'></div>
 						</div>
 						<div class='component_map-container'>
-							<img src='img/map_0.png' alt='Карта'>
+							<img src='".$link."' alt='Карта'>
 						</div>
 						<div class='next-wrapper'>
 							<div class='empty-block'></div>
@@ -173,7 +173,7 @@ function getOneWorkspacePattern(
 			</div>
 			<div class='full-screen'>
 				<div class='full-screen__container'>
-					<img src='img/map_0.png' alt='Карта'>
+					<img src='".$link."' alt='Карта'>
 				</div>
 				<div class='full-screen__nav'>
 					<div id='zoom-down-button'><div class='minus'></div></div>

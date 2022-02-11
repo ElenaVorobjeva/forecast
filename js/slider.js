@@ -1,6 +1,9 @@
 function sliderHandler(start, end, step, date) {
     let slider = document.querySelector("#sliderInput");
     let sliderLabel = document.querySelector(".slider-label");
+    start = +start;
+    end = +end;
+    step = +step;
 
     slider.setAttribute("min", start);
     slider.setAttribute("max", end);
@@ -17,7 +20,7 @@ function sliderHandler(start, end, step, date) {
     });
     document.querySelector(".slider-label").innerHTML = start + "ч.";
 
-    let startDate = new Date(date);
+    let startDate = getDateObj(date);
     startDate.setHours(startDate.getHours() + start);
 
     let hoursInDay = 0;

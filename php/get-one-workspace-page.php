@@ -76,10 +76,14 @@ function getOneWorkspacePage($user) {
     $currentDate = date("Y-m-d"); //2021-09-13
     $times = getTimes($activeDomenId, $activeModelId, $activeElementId, $activeTermId, $terms[$activeTermId], $currentDate);
 
+    $activeTime = getActiveTime();
+    $linkPattern = getLinkPattern($activeDomenId, $activeModelId, $activeElementId, $activeTermId);
+    $link = getLink($linkPattern, $currentDate, $activeTime);
+
     return getOneWorkspacePattern(
         $sectionsList, $activeSection, $miniMap, $typesList, 
         $domensList, $modelsList, $elementsList, $termsList,
-        $currentDate, $times
+        $currentDate, $times, $link
     );
 }
 
@@ -196,6 +200,18 @@ function getTimes($activeDomenId, $activeModelId, $activeElementId, $activeTermI
     $step = 6;
     $date = $currentDate."-".$activeTerm;
     return [$start, $end, $step, $date];
+}
+
+function getActiveTime() {
+    return 0;
+}
+
+function getLinkPattern($activeDomenId, $activeModelId, $activeElementId, $activeTermId) {
+    return "/res/224/images/cosmo6/yyyymmddhh/fm_SNG_H500_HHHhours.png";
+}
+
+function getLink($linkPattern, $currentDate, $activeTime) {
+    return "/res/224/images/cosmo6/20220210/fm_SNG_H500_000hours.png";
 }
 
 ?>
